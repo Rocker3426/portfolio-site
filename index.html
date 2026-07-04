@@ -46,8 +46,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9980;
 .in-file{font-family:var(--font-m);font-size:clamp(.75rem,.8rem+.1vw,.9rem);color:var(--ink);letter-spacing:.04em;margin-bottom:1.75rem;display:flex;align-items:center;gap:.75rem}
 .in-rec{color:var(--accent);font-size:.65rem;animation:recblink 1s steps(1) infinite}
 @keyframes recblink{0%,49%{opacity:1}50%,100%{opacity:0}}
-.in-track{width:min(460px,80vw);height:2px;background:#1A1A1A;margin-bottom:1.4rem;overflow:hidden}
-.in-fill{height:100%;width:0%;background:var(--accent);box-shadow:0 0 12px rgba(255,104,32,.55)}
+.in-track{width:min(460px,80vw);height:2px;background:#1A1A1A;margin-bottom:1.4rem;overflow:hidden;border-radius: 99px; }
+.in-fill{height:100%;width:0%;background:var(--accent);box-shadow:0 0 12px rgba(255,104,32,.55);border-radius: 99px; }
 .in-foot{display:flex;justify-content:space-between;align-items:center;width:min(460px,80vw)}
 .in-status{font-family:var(--font-m);font-size:.63rem;color:#3A3A3A;letter-spacing:.12em;text-transform:uppercase}
 .in-tc{font-family:var(--font-m);font-size:.72rem;color:var(--accent);letter-spacing:.1em}
@@ -73,7 +73,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9980;
 /* HERO */
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:9rem 3.5rem 5.5rem;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
 /* Hero GIF background — add <img class="hero-bg-gif" src="your.gif" alt=""> before .hero-bg-dim */
-.hero-bg-gif{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;filter:blur(12px) brightness(0.3) saturate(0.7);transform:scale(1.08);pointer-events:none}
+.hero-bg-gif{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;filter:blur(5px) brightness(0.6) saturate(0.7);transform:scale(1.00);pointer-events:none}
 .hero-bg-dim{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(13,10,9,.9) 0%,rgba(13,10,9,.55) 100%);pointer-events:none}
 /* Hero text always above background layers */
 .hero-eyebrow,.hero-h1,.hero-sub,.hero-ctas,.hero-tc{position:relative;z-index:2}
@@ -88,7 +88,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9980;
 .hero-sub.show{opacity:1;transform:translateY(0)}
 .hero-ctas{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
 .hero-ctas.show{opacity:1;transform:translateY(0)}
-.btn-fill{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-family:var(--font-d);font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.9rem 2rem;transition:background .2s,transform .15s;min-height:44px;-webkit-tap-highlight-color:transparent}
+.btn-fill{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-family:var(--font-d);font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.9rem 2rem;transition:background .2s,transform .15s;min-height:44px;-webkit-tap-highlight-color:transparent;border-radius: 6px;}
 .btn-fill:hover{background:#FF8040;transform:translateY(-2px)}
 .avail{display:flex;align-items:center;gap:.55rem;font-size:.85rem;color:var(--mid)}
 .dot{width:7px;height:7px;border-radius:50%;background:#22C55E;animation:blink 2s ease-in-out infinite;flex-shrink:0}
@@ -110,8 +110,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9980;
 .sec-label::before{content:'';width:8px;height:8px;background:var(--accent);border-radius:2px;flex-shrink:0}
 
 /* SERVICES */
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}
-.svc-card{background:var(--s1);padding:2.25rem 1.75rem;border-right:1px solid var(--line);transition:background .25s;border-top:2px solid var(--accent)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);border:none;border-radius: 0px; overflow: hidden;}
+.svc-card{background:var(--s1);padding:2.25rem 1.75rem;border-right:1px solid var(--line);transition:background .25s;border-top:2px solid var(--accent);border-radius: 8px;}
 .svc-card:last-child{border-right:none}
 .svc-card:hover{background:var(--s2)}
 .svc-num{font-family:var(--font-d);font-size:2.5rem;font-weight:700;color:rgba(255,104,32,.15);letter-spacing:-.05em;line-height:1;margin-bottom:1.25rem}
@@ -122,8 +122,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9980;
 .svc-note a{color:var(--accent);text-decoration:none}
 
 /* WORK GRID */
-.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line)}
-.work-card{position:relative;background:var(--s1);overflow:hidden;cursor:none;-webkit-tap-highlight-color:transparent}
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border-radius: 8px; overflow: hidden;}
+.work-card{position:relative;background:var(--s1);overflow:hidden;cursor:none;-webkit-tap-highlight-color:transparent;border-radius: 8px;}
 .work-card.featured{grid-column:1/-1}
 .work-thumb{aspect-ratio:16/9;overflow:hidden;position:relative}
 .work-card.featured .work-thumb{aspect-ratio:21/8}
@@ -167,8 +167,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9980;
 }
 
 /* DESIGN GRID */
-.design-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line)}
-.design-card{position:relative;background:var(--s1);overflow:hidden;cursor:none;-webkit-tap-highlight-color:transparent}
+.design-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border-radius: 8px; overflow: hidden;}
+.design-card{position:relative;background:var(--s1);overflow:hidden;cursor:none;-webkit-tap-highlight-color:transparent;border-radius: 8px;}
 .design-card:hover{background:var(--s2)}
 .design-thumb{aspect-ratio:4/3;overflow:hidden;position:relative}
 .dph1{width:100%;height:100%;background:linear-gradient(135deg,#11131A 55%,rgba(100,120,255,.07) 100%)}
@@ -186,8 +186,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9980;
 
 /* ADDITIONAL SERVICES */
 #additional-services{background:var(--s1)}
-.add-svc-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}
-.add-svc-card{background:var(--s1);padding:1.75rem 1.6rem;border-right:1px solid var(--line);transition:background .25s;border-top:1px solid var(--accent)}
+.add-svc-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius: 8px; overflow: hidden;}
+.add-svc-card{background:var(--s1);padding:1.75rem 1.6rem;border-right:1px solid var(--line);transition:background .25s;border-top:1px solid var(--accent);border-radius: 8px;}
 .add-svc-card:last-child{border-right:none}
 .add-svc-card:hover{background:var(--s2)}
 .add-svc-title{font-family:var(--font-d);font-size:.97rem;font-weight:600;letter-spacing:-.01em;margin-bottom:.65rem;line-height:1.3}
@@ -197,45 +197,49 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9980;
 #lightbox{position:fixed;inset:0;z-index:5000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;padding:1rem}
 #lightbox.open{opacity:1;pointer-events:all}
 .lb-bg{position:absolute;inset:0;background:rgba(0,0,0,0.94)}
-.lb-panel{position:relative;z-index:1;width:min(1000px,96vw);max-height:92vh;background:var(--s1);border:1px solid var(--line);display:flex;flex-direction:column;transform:translateY(24px);transition:transform .4s cubic-bezier(.16,1,.3,1);overflow:hidden}
+.lb-panel{position:relative;z-index:1;width:min(1000px,96vw);max-height:92vh;background:var(--s1);border:1px solid var(--line);display:flex;flex-direction:column;transform:translateY(24px);transition:transform .4s cubic-bezier(.16,1,.3,1);overflow:auto;border-radius: 8px;}
 #lightbox.open .lb-panel{transform:translateY(0)}
 .lb-header{padding:1.4rem 1.75rem;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-shrink:0}
 .lb-info{flex:1;min-width:0}
 .lb-cat{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.35rem}
 .lb-title{font-family:var(--font-d);font-size:1.1rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.5rem;line-height:1.25}
-.lb-desc{font-size:.8rem;font-weight:300;color:var(--mid);line-height:1.75;margin-bottom:.65rem;max-width:54ch}
-.lb-skills{display:flex;flex-wrap:wrap;gap:.3rem}
+.lb-desc{font-size:.8rem;font-weight:300;color:var(--mid);line-height:1.75;margin-bottom:.65rem;width:100%}
+.lb-skills{display:flex;flex-wrap:wrap;gap:.3rem;border-radius: 8px;}
 .lb-skill{font-size:.58rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);border:1px solid var(--line);padding:.15rem .5rem}
-.lb-close{background:transparent;border:1px solid var(--line);color:var(--mid);width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:none;font-size:.85rem;flex-shrink:0;transition:border-color .2s,color .2s;min-width:44px;min-height:44px;-webkit-tap-highlight-color:transparent}
+.lb-close{background:transparent;border:1px solid var(--line);color:var(--mid);width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:none;font-size:.85rem;flex-shrink:0;transition:border-color .2s,color .2s;min-width:44px;min-height:44px;-webkit-tap-highlight-color:transparent;border-radius: 8px;}
 .lb-close:hover{border-color:var(--ink);color:var(--ink)}
 /* Shared gallery */
-.lb-gallery{display:flex;flex-direction:row;gap:.85rem;padding:1.4rem 1.75rem;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;flex-shrink:0;align-items:center;justify-content:safe center;scrollbar-width:thin;scrollbar-color:var(--accent) var(--line)}
+.lb-gallery{display:flex;flex-direction:row;gap:.4rem;padding:1.4rem 1.75rem;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;flex-shrink:0;align-items:center;justify-content:safe center;scrollbar-width:thin;scrollbar-color:var(--accent) var(--line)}
 .lb-gallery::-webkit-scrollbar{height:2px}
 .lb-gallery::-webkit-scrollbar-track{background:var(--line)}
 .lb-gallery::-webkit-scrollbar-thumb{background:var(--accent)}
 /* Vertical video items (9:16) — responsive */
-.lb-vitem{flex-shrink:0;scroll-snap-align:start;position:relative;height:min(62vh,480px);width:calc(min(62vh,480px)*9/16);min-width:130px;background:#000;border:1px solid var(--line);overflow:hidden}
+.lb-vitem{flex-shrink:0;scroll-snap-align:start;position:relative;height:min(62vh,480px);width:calc(min(62vh,480px)*9/16);min-width:130px;background:#000;border:1px solid var(--line);overflow:hidden;border-radius: 8px;}
 .lb-vitem iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 .lb-vitem-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;background:var(--s2)}
 .lb-vitem-icon{width:38px;height:38px;border:1px solid var(--dim);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--dim)}
 .lb-vitem-num{font-family:var(--font-m);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
 .lb-vitem-hint{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:#2A2A2A;margin-top:.1rem}
+/* Landscape video item (16:9) — for Kindle Mind etc */
+.lb-vitem-ls{flex-shrink:0;scroll-snap-align:start;position:relative;width:min(800px,88vw);aspect-ratio:16/9;background:#000;border:1px solid var(--line);overflow:hidden;border-radius: 8px;}
+.lb-vitem-ls iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+.lb-vitem-ls-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;background:var(--s2)}
 /* Image items */
-.lb-iitem{flex-shrink:0;scroll-snap-align:start;position:relative;width:240px;height:300px;background:var(--s2);border:1px solid var(--line);overflow:hidden}
+.lb-iitem{flex-shrink:0;scroll-snap-align:start;position:relative;width:240px;height:300px;background:var(--s2);border:1px solid var(--line);overflow:hidden;border-radius: 8px;}
 .lb-iitem img{width:100%;height:100%;object-fit:contain;object-position:center;display:block}
 .lb-iitem-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem}
 .lb-iitem-icon{width:38px;height:38px;border:1px solid var(--dim);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--dim)}
 .lb-iitem-num{font-family:var(--font-m);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
 .lb-iitem-hint{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:#2A2A2A;margin-top:.1rem}
 /* Mixed format (Lucy: main video + GIF row) */
-.lb-gallery.lb-mixed{flex-direction:column;overflow-x:hidden;overflow-y:auto;align-items:center;justify-content:flex-start;gap:1.25rem}
-.lb-mixed-main{flex-shrink:0;position:relative;height:min(52vh,380px);width:calc(min(52vh,380px)*9/16);background:#000;border:1px solid var(--line);overflow:hidden}
+.lb-gallery.lb-mixed{flex-direction:column;overflow-x:hidden;overflow-y:scroll;align-items:center;justify-content:flex-start;gap:1.25rem;max-height: none;padding-bottom: 2rem;}
+.lb-mixed-main{flex-shrink:0;position:relative;height:min(62vh,480px);width:calc(min(62vh,480px)*9/16);background:#000;border:1px solid var(--line);overflow:hidden;border-radius: 8px;}
 .lb-mixed-main iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 .lb-mixed-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;background:var(--s2)}
-.lb-gif-row{display:flex;gap:.75rem;overflow-x:auto;scroll-snap-type:x mandatory;width:100%;padding-bottom:.25rem;-webkit-overflow-scrolling:touch}
+.lb-gif-row{display:flex;gap:.75rem;overflow-x:auto;scroll-snap-type:x mandatory;width:100%;padding-bottom:.25rem;-webkit-overflow-scrolling:touch;justify-content:center}
 .lb-gif-row::-webkit-scrollbar{height:2px}
 .lb-gif-row::-webkit-scrollbar-thumb{background:var(--accent)}
-.lb-gif-item{flex-shrink:0;scroll-snap-align:start;width:170px;height:200px;background:var(--s2);border:1px solid var(--line);overflow:hidden;position:relative}
+.lb-gif-item{flex-shrink:0;scroll-snap-align:start;width:calc(min(52vh,380px)*9/16);height:min(52vh,380px);background:var(--s2);border:1px solid var(--line);overflow:hidden;position:relative;border-radius: 8px;}
 .lb-gif-item img{width:100%;height:100%;object-fit:cover;display:block}
 .lb-gif-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem}
 .lb-gif-ph-icon{width:34px;height:34px;border:1px solid var(--dim);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--dim)}
@@ -243,7 +247,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9980;
 
 /* PROCESS */
 #process{background:var(--s1)}
-.process-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line)}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius: 8px; overflow: hidden;}
 .process-step{background:var(--s1);padding:2.5rem 2rem;border-right:1px solid var(--line)}
 .process-step:last-child{border-right:none}
 .process-num{font-family:var(--font-d);font-size:3rem;font-weight:700;color:rgba(255,104,32,.25);letter-spacing:-.05em;margin-bottom:1.2rem}
@@ -251,8 +255,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9980;
 .process-desc{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.82}
 
 /* TESTIMONIALS */
-.testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-.testi-card{background:var(--s1);border:1.5px solid var(--line);overflow:hidden;transition:border-color .25s}
+.testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;border-radius: 8px; overflow: hidden;}
+.testi-card{background:var(--s1);border:1.5px solid var(--line);overflow:hidden;transition:border-color .25s;border-radius: 8px;}
 .testi-card:hover{border-color:var(--dim)}
 .testi-img{width:100%;display:block;object-fit:contain;max-height:380px;background:var(--s2)}
 .testi-text{padding:2rem}
@@ -278,7 +282,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9980;
 .tools-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
 .tool-cat-label{font-family:var(--font-d);font-size:.68rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--line)}
 .tool-chips{display:flex;flex-direction:column;gap:.4rem}
-.chip{font-family:var(--font-d);font-size:.82rem;font-weight:400;color:var(--mid);padding:.45rem .9rem;border:1px solid var(--line);letter-spacing:.02em;transition:border-color .2s,color .2s,background .2s;display:block}
+.chip{font-family:var(--font-d);font-size:.82rem;font-weight:400;color:var(--mid);padding:.45rem .9rem;border:1px solid var(--line);letter-spacing:.02em;transition:border-color .2s,color .2s,background .2s;display:block;border-radius: 4px;}
 .chip:hover{border-color:var(--accent);color:var(--ink);background:var(--accent-soft)}
 
 /* FAQ */
@@ -305,7 +309,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9980;
 .cta-sub{font-size:.95rem;font-weight:300;color:rgba(0,0,0,.55);max-width:44ch;line-height:1.75;margin-bottom:1.25rem}
 .cta-quote{font-family:var(--font-d);font-size:1rem;font-weight:600;color:rgba(0,0,0,.4);letter-spacing:-.01em;margin-bottom:2rem}
 .cta-links{display:flex;flex-wrap:wrap;gap:.65rem}
-.cta-a{display:inline-flex;align-items:center;gap:.45rem;text-decoration:none;font-family:var(--font-d);font-size:.8rem;font-weight:600;letter-spacing:.05em;color:#0A0807;background:rgba(0,0,0,.12);padding:.7rem 1.35rem;transition:background .2s,transform .15s;text-transform:uppercase;min-height:44px;-webkit-tap-highlight-color:transparent}
+.cta-a{display:inline-flex;align-items:center;gap:.45rem;text-decoration:none;font-family:var(--font-d);font-size:.8rem;font-weight:600;letter-spacing:.05em;color:#0A0807;background:rgba(0,0,0,.12);padding:.7rem 1.35rem;transition:background .2s,transform .15s;text-transform:uppercase;min-height:44px;-webkit-tap-highlight-color:transparent;border-radius: 6px;}
 .cta-a:hover{background:rgba(0,0,0,.22);transform:translateY(-1px)}
 
 /* FOOTER */
@@ -411,9 +415,9 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
 </nav>
 
 <!-- HERO -->
-<!-- TO ADD GIF BACKGROUND: uncomment the img tag below and set src to your GIF file path -->
 <section class="hero">
-  <img class="hero-bg-gif" src="https://customer-07j3l1kup3kw0n0n.cloudflarestream.com/5c8de50f8944692f8ee57a896ac20ba8/iframe?poster=https%3A%2F%2Fcustomer-07j3l1kup3kw0n0n.cloudflarestream.com%2F5c8de50f8944692f8ee57a896ac20ba8%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" alt="" aria-hidden="true">
+  <!-- TO ADD GIF BACKGROUND: uncomment the line below and set src to your GIF file path/URL -->
+  <img class="hero-bg-gif" src="gifs/hero-background.gif" alt="" aria-hidden="true">
   <div class="hero-bg-dim"></div>
   <p class="hero-eyebrow" id="hero-eyebrow">Video Editor &amp; Creative Designer</p>
   <h1 class="hero-h1">
@@ -479,6 +483,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       onclick="openLB(this)">
       <div class="work-thumb">
         <div class="ph ph1"></div>
+        <img class="work-thumb-img" src="thumbnails/Founder & Brand Storytelling.png" alt="">
         <div class="work-thumb-overlay"></div>
         <div class="work-preview"></div>
         <div class="work-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
@@ -502,6 +507,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       onclick="openLB(this)">
       <div class="work-thumb">
         <div class="ph ph2"></div>
+        <img class="work-thumb-img" src="thumbnails/Beauty & Aesthetic Content.png" alt="">
         <div class="work-thumb-overlay"></div>
         <div class="work-preview"></div>
         <span class="work-tc">00:00:58:14</span>
@@ -514,23 +520,24 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       </div>
     </div>
 
-    <!-- KINDLE MIND — 3 videos -->
-    <div class="work-card fade" style="transition-delay:.1s" data-type="video"
+    <!-- KINDLE MIND — landscape (16:9) videos -->
+    <div class="work-card fade" style="transition-delay:.1s" data-type="video" data-format="landscape"
       data-title="Kindle Mind"
       data-cat="Educational Marketing Content"
       data-desc="Content created to address parent pain points and highlight educational solutions, helping learning centres communicate value and attract enquiries through relatable storytelling."
       data-skills="Educational marketing,Parent-focused messaging,Social media editing,Storytelling,Service promotion"
       data-v1="https://customer-07j3l1kup3kw0n0n.cloudflarestream.com/24bbcb2fdc3ff6fc1aa4a161eff13947/iframe?poster=https%3A%2F%2Fcustomer-07j3l1kup3kw0n0n.cloudflarestream.com%2F24bbcb2fdc3ff6fc1aa4a161eff13947%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
       data-v2="https://customer-07j3l1kup3kw0n0n.cloudflarestream.com/6ddce242e73eae91281a4dd4a30baa73/iframe?poster=https%3A%2F%2Fcustomer-07j3l1kup3kw0n0n.cloudflarestream.com%2F6ddce242e73eae91281a4dd4a30baa73%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
-      data-v3="#"
+    
       onclick="openLB(this)">
       <div class="work-thumb">
         <div class="ph ph3"></div>
+        <img class="work-thumb-img" src="thumbnails/Kids Learning Programs.png" alt="">
         <div class="work-thumb-overlay"></div>
         <div class="work-preview"></div>
         <span class="work-tc">00:01:12:06</span>
         <div class="work-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
-        <span class="work-count">3 Videos</span>
+        <span class="work-count">2 Videos</span>
       </div>
       <div class="work-meta">
         <p class="work-cat">Educational Marketing Content</p>
@@ -548,6 +555,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       onclick="openLB(this)">
       <div class="work-thumb">
         <div class="ph ph4"></div>
+        <img class="work-thumb-img" src="thumbnails/Street Interview Series.png" alt="">
         <div class="work-thumb-overlay"></div>
         <div class="work-preview"></div>
         <span class="work-tc">00:03:22:18</span>
@@ -570,6 +578,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       onclick="openLB(this)">
       <div class="work-thumb">
         <div class="ph ph5"></div>
+        <img class="work-thumb-img" src="thumbnails/Event Highlights.png" alt="">
         <div class="work-thumb-overlay"></div>
         <div class="work-preview"></div>
         <span class="work-tc">00:02:44:09</span>
@@ -592,6 +601,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       onclick="openLB(this)">
       <div class="work-thumb">
         <div class="ph ph6"></div>
+        <img class="work-thumb-img" src="thumbnails/Film Developing Class Promo.png" alt="">
         <div class="work-thumb-overlay"></div>
         <div class="work-preview"></div>
         <span class="work-tc">00:01:38:22</span>
@@ -612,15 +622,16 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       data-desc="Animation-focused content created using motion design principles to transform information into engaging visual narratives."
       data-skills="After Effects,Motion graphics,Animation,Visual communication"
       data-v1="https://customer-07j3l1kup3kw0n0n.cloudflarestream.com/e6548fa5789dded950b822bff1611cd0/iframe?poster=https%3A%2F%2Fcustomer-07j3l1kup3kw0n0n.cloudflarestream.com%2Fe6548fa5789dded950b822bff1611cd0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
-      data-gif1="https://customer-07j3l1kup3kw0n0n.cloudflarestream.com/5217b314277f6c84d2af299e227f7b84/iframe?poster=https%3A%2F%2Fcustomer-07j3l1kup3kw0n0n.cloudflarestream.com%2F5217b314277f6c84d2af299e227f7b84%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" data-gif2="https://customer-07j3l1kup3kw0n0n.cloudflarestream.com/7877de1106a8756cf6d47a2c941102c6/iframe?poster=https%3A%2F%2Fcustomer-07j3l1kup3kw0n0n.cloudflarestream.com%2F7877de1106a8756cf6d47a2c941102c6%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" data-gif3="https://customer-07j3l1kup3kw0n0n.cloudflarestream.com/7877de1106a8756cf6d47a2c941102c6/iframe?poster=https%3A%2F%2Fcustomer-07j3l1kup3kw0n0n.cloudflarestream.com%2F7877de1106a8756cf6d47a2c941102c6%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
+      data-gif1="gifs/lucy-01.gif" data-gif2="gifs/lucy-02.gif" data-gif3="gifs/lucy-03.gif"
       onclick="openLB(this)">
       <div class="work-thumb">
         <div class="ph ph7"></div>
+        <img class="work-thumb-img" src="thumbnails/Motion Graphics _ Tech & Business.png" alt="">
         <div class="work-thumb-overlay"></div>
         <div class="work-preview"></div>
         <span class="work-tc">00:00:45:03</span>
         <div class="work-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
-        <span class="work-count">1 Video + 3 GIFs</span>
+        <span class="work-count">1 Video</span>
       </div>
       <div class="work-meta">
         <p class="work-cat">Motion Graphics &amp; Animation</p>
@@ -644,6 +655,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       onclick="openLB(this)">
       <div class="design-thumb">
         <div class="dph1"></div>
+        <img class="work-thumb-img" src="thumbnails/MESH LinkedIn Creatives.png" alt="">
         <div class="design-hover"><span class="design-hover-text">View Case Study</span><span class="design-hover-arrow">&#8594;</span></div>
       </div>
       <div class="design-meta">
@@ -660,6 +672,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       onclick="openLB(this)">
       <div class="design-thumb">
         <div class="dph2"></div>
+        <img class="work-thumb-img" src="thumbnails/PurelyB Email Campaigns.png" alt="">
         <div class="design-hover"><span class="design-hover-text">View Case Study</span><span class="design-hover-arrow">&#8594;</span></div>
       </div>
       <div class="design-meta">
@@ -867,6 +880,19 @@ function openLB(card){
         el.innerHTML='<div class="lb-iitem-ph"><div class="lb-iitem-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg></div><span class="lb-iitem-num">Image 0'+i+'</span><span class="lb-iitem-hint">Add image path</span></div>';
       }else{
         el.innerHTML='<img src="'+src+'" alt="Design work '+i+'" loading="lazy">';
+      }
+      gallery.appendChild(el);
+    }
+  } else if(format==='landscape'){
+    for(let i=1;i<=5;i++){
+      const v=card.getAttribute('data-v'+i);
+      if(!v)break;
+      const el=document.createElement('div');
+      el.className='lb-vitem-ls';
+      if(v==='#'){
+        el.innerHTML='<div class="lb-vitem-ls-ph"><div class="lb-vitem-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg></div><span class="lb-vitem-num">Video 0'+i+'</span><span class="lb-vitem-hint">Add URL</span></div>';
+      }else{
+        el.innerHTML='<iframe src="'+v+'" allowfullscreen allow="fullscreen"></iframe>';
       }
       gallery.appendChild(el);
     }
