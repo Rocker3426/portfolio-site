@@ -417,7 +417,9 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
 <!-- HERO -->
 <section class="hero">
   <!-- TO ADD GIF BACKGROUND: uncomment the line below and set src to your GIF file path/URL -->
-  <img class="hero-bg-gif" src="gifs/hero-background.gif" alt="" aria-hidden="true">
+  <video class="hero-bg-gif" autoplay muted loop playsinline>
+    <source src="https://customer-07j3l1kup3kw0n0n.cloudflarestream.com/09ca69223547b3efe2937cfe95b09fd1/downloads/default.mp4" type="video/mp4">
+  </video>
   <div class="hero-bg-dim"></div>
   <p class="hero-eyebrow" id="hero-eyebrow">Video Editor &amp; Creative Designer</p>
   <h1 class="hero-h1">
@@ -622,7 +624,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       data-desc="Animation-focused content created using motion design principles to transform information into engaging visual narratives."
       data-skills="After Effects,Motion graphics,Animation,Visual communication"
       data-v1="https://customer-07j3l1kup3kw0n0n.cloudflarestream.com/e6548fa5789dded950b822bff1611cd0/iframe?poster=https%3A%2F%2Fcustomer-07j3l1kup3kw0n0n.cloudflarestream.com%2Fe6548fa5789dded950b822bff1611cd0%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
-      data-gif1="gifs/lucy-01.gif" data-gif2="gifs/lucy-02.gif" data-gif3="gifs/lucy-03.gif"
+      data-gif1="https://customer-07j3l1kup3kw0n0n.cloudflarestream.com/7c2e18c7e224e42cef8806a4f0ee5af8/iframe?poster=https%3A%2F%2Fcustomer-07j3l1kup3kw0n0n.cloudflarestream.com%2F7c2e18c7e224e42cef8806a4f0ee5af8%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" data-gif2="https://customer-07j3l1kup3kw0n0n.cloudflarestream.com/67bc14b138b6ad9d8ecc405b6d90094a/iframe?poster=https%3A%2F%2Fcustomer-07j3l1kup3kw0n0n.cloudflarestream.com%2F67bc14b138b6ad9d8ecc405b6d90094a%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600" data-gif3="https://customer-07j3l1kup3kw0n0n.cloudflarestream.com/bd81733a6ca76b3bf5ea88773945c748/iframe?poster=https%3A%2F%2Fcustomer-07j3l1kup3kw0n0n.cloudflarestream.com%2Fbd81733a6ca76b3bf5ea88773945c748%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
       onclick="openLB(this)">
       <div class="work-thumb">
         <div class="ph ph7"></div>
@@ -878,9 +880,14 @@ function openLB(card){
       el.className='lb-iitem';
       if(src==='#'){
         el.innerHTML='<div class="lb-iitem-ph"><div class="lb-iitem-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg></div><span class="lb-iitem-num">Image 0'+i+'</span><span class="lb-iitem-hint">Add image path</span></div>';
-      }else{
-        el.innerHTML='<img src="'+src+'" alt="Design work '+i+'" loading="lazy">';
-      }
+     }else{
+  if(g.includes('cloudflarestream')||g.endsWith('.mp4')){
+    const autoUrl = g.includes('?') ? g+'&autoplay=true&muted=true' : g+'?autoplay=true&muted=true';
+    el.innerHTML='<iframe src="'+autoUrl+'" allowfullscreen allow="autoplay;fullscreen" style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>';
+  }else{
+    el.innerHTML='<img src="'+g+'" alt="GIF '+(i+1)+'" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">';
+  }
+}
       gallery.appendChild(el);
     }
   } else if(format==='landscape'){
@@ -918,9 +925,18 @@ function openLB(card){
         const el=document.createElement('div');
         el.className='lb-gif-item';
         if(g==='#'){
-          el.innerHTML='<div class="lb-gif-ph"><div class="lb-gif-ph-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="21,15 16,10 5,21"/></svg></div><span class="lb-gif-ph-label">GIF 0'+(i+1)+'</span></div>';
+            el.innerHTML='<div class="lb-gif-ph"><div class="lb-gif-ph-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="21,15 16,10 5,21"/></svg></div><span class="lb-gif-ph-label">GIF 0'+(i+1)+'</span></div>';
+        }else if(g.includes('cloudflarestream')){
+  const match = g.match(/cloudflarestream\.com\/([^/]+)\//);
+  if(match){
+    const mp4url = 'https://customer-07j3l1kup3kw0n0n.cloudflarestream.com/'+match[1]+'/downloads/default.mp4';
+    el.innerHTML='<video src="'+mp4url+'" autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>';
+  }else{
+    el.innerHTML='<iframe src="'+g+'" allowfullscreen allow="autoplay;fullscreen" style="position:absolute;inset:0;width:100%;height:100%;border:none"></iframe>';
+  }
+  el.style.position='relative';
         }else{
-          el.innerHTML='<img src="'+g+'" alt="GIF '+(i+1)+'" loading="lazy">';
+          el.innerHTML='<img src="'+g+'" alt="GIF '+(i+1)+'" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">';
         }
         row.appendChild(el);
       });
