@@ -315,6 +315,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9980;
 /* FOOTER */
 footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex;justify-content:space-between;align-items:center;font-size:.72rem;letter-spacing:.06em;border-top:1px solid var(--line)}
 
+/* SCROLL PROGRESS BAR */
+#scroll-bar{position:fixed;top:0;left:0;height:2px;width:0%;background:var(--accent);z-index:9997;box-shadow:0 0 8px rgba(255,104,32,.6);transition:width .05s linear;border-radius:99px}
+
 /* SCROLL REVEAL */
 .fade{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s cubic-bezier(.16,1,.3,1)}
 .fade.in{opacity:1;transform:translateY(0)}
@@ -371,6 +374,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
 <body>
 
 <div id="cursor"></div>
+<div id="scroll-bar"></div>
 
 <!-- EDITOR INTRO -->
 <div id="intro">
@@ -829,33 +833,7 @@ function startHero(){
 }
 function startTC(){const el=document.getElementById('live-tc');function tick(){const n=new Date();el.textContent=pad(n.getHours())+':'+pad(n.getMinutes())+':'+pad(n.getSeconds())+':'+pad(Math.floor(n.getMilliseconds()/1000*24));requestAnimationFrame(tick)}tick()}
 
-/* HOVER PREVIEW (desktop, Cloudflare Stream only) */
-if(window.matchMedia('(hover:hover)').matches){
-  document.querySelectorAll('.work-card').forEach(card=>{
-    const preview=card.querySelector('.work-preview');
-    if(!preview)return;
-    let startTimer,hideTimer;
-    card.addEventListener('mouseenter',()=>{
-      const v1=card.getAttribute('data-v1');
-      if(!v1||v1==='#'||!v1.includes('cloudflarestream'))return;
-      const sep=v1.includes('?')?'&':'?';
-      const url=v1+sep+'autoplay=true&muted=true&controls=false';
-      startTimer=setTimeout(()=>{
-        preview.innerHTML='<iframe src="'+url+'" allow="autoplay"></iframe>';
-        preview.classList.add('active');
-        hideTimer=setTimeout(()=>{
-          preview.classList.remove('active');
-          setTimeout(()=>{preview.innerHTML=''},350);
-        },5000);
-      },250);
-    });
-    card.addEventListener('mouseleave',()=>{
-      clearTimeout(startTimer);clearTimeout(hideTimer);
-      preview.classList.remove('active');
-      setTimeout(()=>{preview.innerHTML=''},350);
-    });
-  });
-}
+/* HOVER PREVIEW disabled */
 
 /* LIGHTBOX */
 const lb=document.getElementById('lightbox');
