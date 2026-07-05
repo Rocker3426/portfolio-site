@@ -28,9 +28,9 @@
 }
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--ink);font-family:var(--font-b);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;cursor:none;overflow-x:hidden}
-body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9980;
+/*body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9980;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity:.028;animation:grain .4s steps(1) infinite}
+  opacity:.028;animation:grain .4s steps(1) infinite}*/
 @keyframes grain{0%,100%{transform:translate(0,0)}25%{transform:translate(-2%,3%)}50%{transform:translate(3%,-2%)}75%{transform:translate(-1%,2%)}}
 
 @media(hover:hover){
@@ -76,7 +76,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9980;
 /* HERO */
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:9rem 3.5rem 5.5rem;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
 /* Hero GIF background — add <img class="hero-bg-gif" src="your.gif" alt=""> before .hero-bg-dim */
-.hero-bg-gif{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;filter:blur(5px) brightness(0.6) saturate(0.7);transform:scale(1.00);pointer-events:none}
+.hero-bg-gif{will-change:auto;}
+.hero-bg-gif{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;filter:blur(5px) brightness(0.6) saturate(0.7);transform:scale(1.00);pointer-events:none;}
 .hero-bg-dim{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(13,10,9,.9) 0%,rgba(13,10,9,.55) 100%);pointer-events:none}
 /* Hero text always above background layers */
 .hero-eyebrow,.hero-h1,.hero-sub,.hero-ctas,.hero-tc{position:relative;z-index:2}
@@ -493,7 +494,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       onclick="openLB(this)">
       <div class="work-thumb">
         <div class="ph ph2"></div>
-        <img class="work-thumb-img" src="thumbnails/Beauty & Aesthetic Content.png" alt="">
+        <img class="work-thumb-img" src="thumbnails/Beauty & Aesthetic Content.jpg" alt="">
         <div class="work-thumb-overlay"></div>
         <div class="work-preview"></div>
         <span class="work-tc">00:00:58:14</span>
@@ -518,7 +519,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       onclick="openLB(this)">
       <div class="work-thumb">
         <div class="ph ph1"></div>
-        <img class="work-thumb-img" src="thumbnails/Founder & Brand Storytelling.png" alt="">
+        <img class="work-thumb-img" src="thumbnails/Founder & Brand Storytelling.jpg" alt="">
         <div class="work-thumb-overlay"></div>
         <div class="work-preview"></div>
         <div class="work-play"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
@@ -541,7 +542,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       onclick="openLB(this)">
       <div class="work-thumb">
         <div class="ph ph3"></div>
-        <img class="work-thumb-img" src="thumbnails/Kids Learning Programs.png" alt="">
+        <img class="work-thumb-img" src="thumbnails/Kids Learning Programs.jpg" alt="">
         <div class="work-thumb-overlay"></div>
         <div class="work-preview"></div>
         <span class="work-tc">00:01:12:06</span>
@@ -567,7 +568,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       onclick="openLB(this)">
       <div class="work-thumb">
         <div class="ph ph4"></div>
-        <img class="work-thumb-img" src="thumbnails/Street Interview Series.png" alt="">
+        <img class="work-thumb-img" src="thumbnails/Street Interview Series.jpg" alt="">
         <div class="work-thumb-overlay"></div>
         <div class="work-preview"></div>
         <span class="work-tc">00:03:22:18</span>
@@ -592,7 +593,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       onclick="openLB(this)">
       <div class="work-thumb">
         <div class="ph ph5"></div>
-        <img class="work-thumb-img" src="thumbnails/Event Highlights.png" alt="">
+        <img class="work-thumb-img" src="thumbnails/Event Highlights.jpg" alt="">
         <div class="work-thumb-overlay"></div>
         <div class="work-preview"></div>
         <span class="work-tc">00:02:44:09</span>
@@ -615,7 +616,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       onclick="openLB(this)">
       <div class="work-thumb">
         <div class="ph ph6"></div>
-        <img class="work-thumb-img" src="thumbnails/Film Developing Class Promo.png" alt="">
+        <img class="work-thumb-img" src="thumbnails/Film Developing Class Promo.jpg" alt="">
         <div class="work-thumb-overlay"></div>
         <div class="work-preview"></div>
         <span class="work-tc">00:01:38:22</span>
@@ -640,7 +641,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       onclick="openLB(this)">
       <div class="work-thumb">
         <div class="ph ph7"></div>
-        <img class="work-thumb-img" src="thumbnails/Motion Graphics _ Tech & Business.png" alt="">
+        <img class="work-thumb-img" src="thumbnails/Motion Graphics _ Tech & Business.jpg" alt="">
         <div class="work-thumb-overlay"></div>
         <div class="work-preview"></div>
         <span class="work-tc">00:00:45:03</span>
@@ -665,11 +666,11 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       data-cat="Email Marketing Design"
       data-desc="Conversion-focused email designs created to support product launches, promotions, educational campaigns, and customer engagement while maintaining brand identity and readability."
       data-skills="EDM design,Email marketing,Campaign design,Promotional content,Figma,Conversion-focused layouts"
-      data-img1="thumbnails/PurelyB Email Campaigns.png"
+      data-img1="thumbnails/PurelyB Email Campaigns.jpg"
       onclick="openLB(this)">
       <div class="design-thumb">
         <div class="dph2"></div>
-        <img class="work-thumb-img" src="thumbnails/PurelyB Email Campaigns.png" alt="">
+        <img class="work-thumb-img" src="thumbnails/PurelyB Email Campaigns.jpg" alt="">
         <div class="design-hover"><span class="design-hover-text">View Case Study</span><span class="design-hover-arrow">&#8594;</span></div>
       </div>
       <div class="design-meta">
@@ -683,11 +684,11 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
       data-cat="B2B Social Media Design"
       data-desc="Professional social media visuals created for B2B audiences, focusing on clarity, credibility, and brand consistency across LinkedIn marketing campaigns."
       data-skills="LinkedIn content design,B2B marketing,Visual hierarchy,Brand consistency,Information design"
-      data-img1="thumbnails/MESH LinkedIn Creatives.png"
+      data-img1="thumbnails/MESH LinkedIn Creatives.jpg"
       onclick="openLB(this)">
       <div class="design-thumb">
         <div class="dph1"></div>
-        <img class="work-thumb-img" src="thumbnails/MESH LinkedIn Creatives.png" alt="">
+        <img class="work-thumb-img" src="thumbnails/MESH LinkedIn Creatives.jpg" alt="">
         <div class="design-hover"><span class="design-hover-text">View Case Study</span><span class="design-hover-arrow">&#8594;</span></div>
       </div>
       <div class="design-meta">
