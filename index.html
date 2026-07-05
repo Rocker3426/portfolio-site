@@ -14,6 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital@1&family=Inter:wght@300;400&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
 :root{
   color-scheme:dark;
   --bg:#0D0A09;--s1:#131110;--s2:#1A1714;--ink:#F2EDE8;--mid:#C2B9AB;
@@ -374,7 +375,7 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
 </style>
 </head>
 <body>
-
+ 
 <div id="cursor"></div>
 <div id="scroll-bar"></div>
 
@@ -791,6 +792,8 @@ footer{background:var(--bg);color:var(--dim);padding:1.65rem 3.5rem;display:flex
 </footer>
 
 <script>
+  history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
 const pad = n => String(n).padStart(2,'0');
 
 /* CURSOR */
